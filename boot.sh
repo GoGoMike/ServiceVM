@@ -12,7 +12,7 @@ echo "###Installing libvirt & utilities###"
 sudo dnf module install virt -y -q
 sudo dnf install virt-install virt-viewer libguestfs-tools -y -q
 echo "##Starting and configuring libvirtd##"
-sudo systemctl enable libvirtd.service && sudo systemctl start libvirtd.service
+sudo systemctl enable libvirtd.service --now
 virsh pool-define-as default dir - - - - "/kvm/images"
 virsh pool-build default && virsh pool-autostart default && virsh pool-start default
 echo "###Installing virt-v2v & OS-client###"
