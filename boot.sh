@@ -28,6 +28,11 @@ pip3 install --user --upgrade pip setuptools
 pip3 install --user --upgrade git+https://github.com/vmware/vsphere-automation-sdk-python.git
 sleep 2
 echo "export LIBGUESTFS_BACKEND=direct" >> $HOME/.bashrc
-echo "All tasks completed. Reboot in 30 seconds!!!"
-sleep 30
-sudo shutdown -r now
+###
+read -r -p "All done, go to reboot? [Y/n]" response
+response=${response,,}
+if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+sudo shutdown -h now
+else
+echo "Bye! Bye!"
+fi
