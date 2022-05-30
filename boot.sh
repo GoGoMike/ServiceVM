@@ -23,7 +23,7 @@ sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/ceph-nautilus.repo && 
 sudo dnf install python3-openstackclient ansible -y -q
 echo "#########Configuring ansible#########"
 ansible-galaxy collection install community.vmware
-sudo sed -i '/#enable_plugins/ a enable_plugins = host_list, script, auto, yaml, ini, toml, community.vmware.vmware_vm_inventory, vmware_vm_inventory' /etc/ansible/ansible.cfg
+sudo sed -i '/#enable_plugins/ a enable_plugins = host_list, script, auto, yaml, ini, community.vmware.vmware_vm_inventory, vmware_vm_inventory' /etc/ansible/ansible.cfg
 pip3 install --user --upgrade pip setuptools
 pip3 install --user --upgrade git+https://github.com/vmware/vsphere-automation-sdk-python.git
 sleep 2
