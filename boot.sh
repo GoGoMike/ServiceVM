@@ -32,7 +32,7 @@ echo "export LIBGUESTFS_BACKEND=direct" >> $HOME/.bashrc
 read -r -p "All done, go to reboot? [Y/n]" response
 response=${response,,}
 if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
-sudo shutdown -h now
+sudo shutdown -r now
 else
 echo "Bye! Bye!"
 fi
