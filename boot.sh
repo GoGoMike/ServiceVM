@@ -27,7 +27,7 @@ sudo sed -i '/#enable_plugins/ a enable_plugins = host_list, script, auto, yaml,
 pip3 install --user --upgrade pip setuptools
 pip3 install --user --upgrade git+https://github.com/vmware/vsphere-automation-sdk-python.git
 sleep 2
-sudo echo "export LIBGUESTFS_BACKEND=direct" >> /root/.bashrc
+#sudo echo "export LIBGUESTFS_BACKEND=direct" >> /root/.bashrc
 echo "All tasks completed. Reboot in 30 seconds!!!"
 sleep 30
 sudo shutdown -r now
