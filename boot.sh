@@ -16,7 +16,7 @@ sudo systemctl enable libvirtd.service && sudo systemctl start libvirtd.service
 virsh pool-define-as default dir - - - - "/kvm/images"
 virsh pool-build default && virsh pool-autostart default && virsh pool-start default
 echo "###Installing virt-v2v & OS-client###"
-sudo dnf install virt-v2v -y -q
+sudo dnf install virt-v2v virtio-win -y -q
 sudo dnf install centos-release-openstack-train -y -q 
 sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-OpenStack-train.repo && sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-OpenStack-train.repo
 sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/ceph-nautilus.repo && sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/ceph-nautilus.repo
