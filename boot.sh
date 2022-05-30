@@ -2,7 +2,7 @@
 echo "Starting update"
 sleep 2
 sudo dnf update -y -q
-echo "Update complete"
+echo "Update completed"
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sudo setenforce 0
 echo "SElinux disabled"
