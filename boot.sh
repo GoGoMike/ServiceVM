@@ -62,7 +62,7 @@ pip3 install --user --upgrade pip setuptools
 pip3 install --user --upgrade git+https://github.com/vmware/vsphere-automation-sdk-python.git
 sleep 2
 echo "export LIBGUESTFS_BACKEND=direct" >> $HOME/.bashrc
-###
+### Y/n reboot question ###
 read -r -p "All done, go to reboot? [Y/n]" response
 response=${response,,}
 if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
