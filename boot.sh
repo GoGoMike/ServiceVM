@@ -1,12 +1,7 @@
 #!/bin/bash
-# Spinner usage:
-# Fn_Spinner &
-# SpinPID=$!
-# [some long running task]
-# Fn_EndSpinner
+### Spinner for heavy tasks ###
 Fn_Spinner() {
   SpinChars='/-\|'
-#  printf -- '%s' "Processing , this might take a while... "
   tput sc
   while true; do
     printf -- '\b%.1s' "${SpinChars}"
